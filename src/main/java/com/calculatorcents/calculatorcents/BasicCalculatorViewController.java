@@ -6,10 +6,12 @@ package com.calculatorcents.calculatorcents;
         import javafx.scene.control.Button;
         import javafx.scene.control.MenuItem;
         import javafx.scene.control.TextArea;
+        import javafx.scene.control.TextField;
         import javafx.scene.input.ContextMenuEvent;
         import javafx.scene.input.MouseEvent;
 
         import java.net.URL;
+        import java.text.DecimalFormat;
         import java.util.ResourceBundle;
 
 public class BasicCalculatorViewController implements Initializable {
@@ -75,8 +77,9 @@ public class BasicCalculatorViewController implements Initializable {
     private MenuItem menuItemExit;
 
     @FXML
-    private TextArea textAreaMainDisplay;
+    private TextField textFieldMainDisplay;
 
+    CalculatorClass CalcVals = new CalculatorClass();
     @FXML
     void buttonClearClicked(MouseEvent event) {
 
@@ -119,7 +122,13 @@ public class BasicCalculatorViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        textAreaMainDisplay.setText("0");
-        CalculatorClass Calc = new CalculatorClass();
+        //textFieldMainDisplay.setText(String.valueOf(CalcVals.DisplayNumber));
+        Display();
     }
+
+    private void Display()
+    {
+        textFieldMainDisplay.setText(String.valueOf(new DecimalFormat("#,##0.#######").format(CalcVals.DisplayNumber)));
+    }
+
 }
