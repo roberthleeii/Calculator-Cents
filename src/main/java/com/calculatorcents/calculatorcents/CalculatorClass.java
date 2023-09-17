@@ -155,8 +155,7 @@ public class CalculatorClass {
                         Number = NumberSimpleOpp - Number;
                     else if (Operator == '*')
                         Number = NumberSimpleOpp * Number;
-                    else if (Operator == '/')
-                        Number = NumberSimpleOpp / Number;
+                    else Number = NumberSimpleOpp / Number;
                 }
                 else
                 {
@@ -166,8 +165,7 @@ public class CalculatorClass {
                         Number = Number - NumberEnterRepeat;
                     else if (Operator == '*')
                         Number = Number * NumberEnterRepeat;
-                    else if (Operator == '/')
-                        Number = Number / NumberEnterRepeat;
+                    else Number = Number / NumberEnterRepeat;
                 }
             DisplayNumber = Number;
             break;
