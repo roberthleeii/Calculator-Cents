@@ -1,4 +1,3 @@
-/*
 package com.calculatorcents.calculatorcents;
 
 public class Main_1 {
@@ -6,4 +5,3 @@ public class Main_1 {
         CalculatorCentsApplication.main(args);
     }
 }
-*/
