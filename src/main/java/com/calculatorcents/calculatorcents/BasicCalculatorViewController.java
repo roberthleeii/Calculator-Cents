@@ -124,8 +124,8 @@ public class BasicCalculatorViewController implements Initializable {
 
         Button source = (Button)event.getSource();
         char n = switch (source.getId()) {
-            case "buttonPlus" -> '+';
-            case "buttonMinus" -> '-';
+            case "buttonAdd" -> '+';
+            case "buttonSubtract" -> '-';
             case "buttonMultiply" -> '*';
             case "buttonDivide" -> '/';
             default -> 'm';
@@ -137,17 +137,26 @@ public class BasicCalculatorViewController implements Initializable {
 
     @FXML
     void buttonPercentClicked(MouseEvent event) {
-
+        CalcVals.Percent();
+        Display();
     }
 
     @FXML
     void buttonSqrtClicked(MouseEvent event) {
-
+        CalcVals.Sqrt();
+        Display();
     }
 
     @FXML
     void exitApplication(ActionEvent event) {
 
+
+    }
+
+    @FXML
+    void buttonPlusMinusClicked(MouseEvent event) {
+        CalcVals.PlusMinus();
+        Display();
     }
 
     @Override

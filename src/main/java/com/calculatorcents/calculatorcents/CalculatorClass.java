@@ -117,18 +117,19 @@ public class CalculatorClass {
         }
         else if (!CalculateNextOppRepeat)
         {
-            if ( opp == '+')
+            if ( Operator == '+')
                 DisplayNumber = NumberSimpleOpp + Number;
-            else if (opp == '-')
+            else if (Operator == '-')
                 DisplayNumber = NumberSimpleOpp - Number;
-            else if (opp == '*')
+            else if (Operator == '*')
                 DisplayNumber = NumberSimpleOpp * Number;
-            else if (opp == '/')
+            else if (Operator == '/')
                 DisplayNumber = NumberSimpleOpp / Number;
             NumberSimpleOpp = DisplayNumber;
             Number = 0;
-            CalculateNextOppRepeat = true;
+            //CalculateNextOppRepeat = true;
             CanDecimal = false;
+            System.out.println("this one!");
         }
 
         Operator = opp;
@@ -186,6 +187,18 @@ public class CalculatorClass {
     public void PlusMinus()
     {
         Number = -Number;
+        DisplayNumber = Number;
+    }
+
+    public void Sqrt()
+    {
+        Number = Math.sqrt(Number);
+        DisplayNumber = Number;
+    }
+
+    public void Percent()
+    {
+        Number = Number *.01;
         DisplayNumber = Number;
     }
 
