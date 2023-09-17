@@ -86,11 +86,6 @@ public class BasicCalculatorViewController implements Initializable {
     }
 
     @FXML
-    void buttonDecimalClicked(MouseEvent event) {
-
-    }
-
-    @FXML
     void buttonEqualClicked(ContextMenuEvent event) {
 
     }
@@ -98,6 +93,51 @@ public class BasicCalculatorViewController implements Initializable {
     @FXML
     void buttonNumberClicked(MouseEvent event) {
 
+        Button source = (Button)event.getSource();
+
+        if (source.getId().equals("buttonDecimal"))
+        {
+            CalcVals.PressDecimal();
+            Display();
+            return;
+        }
+
+        int n = 0;
+        switch (source.getId())
+        {
+            case "button0":
+                n = 0;
+                break;
+            case "button1":
+                n = 1;
+                break;
+            case "button2":
+                n = 2;
+                break;
+            case "button3":
+                n = 3;
+                break;
+            case "button4":
+                n = 4;
+                break;
+            case "button5":
+                n = 5;
+                break;
+            case "button6":
+                n = 6;
+                break;
+            case "button7":
+                n = 7;
+                break;
+            case "button8":
+                n = 8;
+                break;
+            case "button9":
+                n = 9;
+                break;
+        }
+        CalcVals.PressNumber(n);
+        Display();
     }
 
     @FXML

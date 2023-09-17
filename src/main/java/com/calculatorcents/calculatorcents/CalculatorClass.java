@@ -93,7 +93,8 @@ public class CalculatorClass {
 
     public void PressDecimal()
     {
-        if (CanDecimal) {
+        if (CanDecimal)
+        {
             NextDecimal = true;
             NewNumber = false;
         }
