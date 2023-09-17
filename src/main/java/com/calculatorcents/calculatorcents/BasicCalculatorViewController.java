@@ -5,11 +5,9 @@ package com.calculatorcents.calculatorcents;
         import javafx.fxml.Initializable;
         import javafx.scene.control.Button;
         import javafx.scene.control.MenuItem;
-        import javafx.scene.control.TextArea;
         import javafx.scene.control.TextField;
         import javafx.scene.input.ContextMenuEvent;
         import javafx.scene.input.MouseEvent;
-
         import java.net.URL;
         import java.text.DecimalFormat;
         import java.util.ResourceBundle;
@@ -82,12 +80,14 @@ public class BasicCalculatorViewController implements Initializable {
     CalculatorClass CalcVals = new CalculatorClass();
     @FXML
     void buttonClearClicked(MouseEvent event) {
-
+        CalcVals.Clear();
+        Display();
     }
 
     @FXML
-    void buttonEqualClicked(ContextMenuEvent event) {
-
+    void buttonEqualClicked(MouseEvent event) {
+        CalcVals.PressEnter();
+        Display();
     }
 
     @FXML
@@ -102,46 +102,36 @@ public class BasicCalculatorViewController implements Initializable {
             return;
         }
 
-        int n = 0;
-        switch (source.getId())
-        {
-            case "button0":
-                n = 0;
-                break;
-            case "button1":
-                n = 1;
-                break;
-            case "button2":
-                n = 2;
-                break;
-            case "button3":
-                n = 3;
-                break;
-            case "button4":
-                n = 4;
-                break;
-            case "button5":
-                n = 5;
-                break;
-            case "button6":
-                n = 6;
-                break;
-            case "button7":
-                n = 7;
-                break;
-            case "button8":
-                n = 8;
-                break;
-            case "button9":
-                n = 9;
-                break;
-        }
+        int n = switch (source.getId()) {
+            case "button0" -> 0;
+            case "button1" -> 1;
+            case "button2" -> 2;
+            case "button3" -> 3;
+            case "button4" -> 4;
+            case "button5" -> 5;
+            case "button6" -> 6;
+            case "button7" -> 7;
+            case "button8" -> 8;
+            case "button9" -> 9;
+            default -> 0;
+        };
         CalcVals.PressNumber(n);
         Display();
     }
 
     @FXML
     void buttonOperatorClicked(MouseEvent event) {
+
+        Button source = (Button)event.getSource();
+        char n = switch (source.getId()) {
+            case "buttonPlus" -> '+';
+            case "buttonMinus" -> '-';
+            case "buttonMultiply" -> '*';
+            case "buttonDivide" -> '/';
+            default -> 'm';
+        };
+        CalcVals.PressOperation(n);
+        Display();
 
     }
 
