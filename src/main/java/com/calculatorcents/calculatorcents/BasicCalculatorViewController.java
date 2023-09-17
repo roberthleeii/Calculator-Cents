@@ -7,12 +7,18 @@ package com.calculatorcents.calculatorcents;
         import javafx.scene.control.MenuItem;
         import javafx.scene.control.TextField;
         import javafx.scene.input.ContextMenuEvent;
+        import javafx.scene.input.KeyEvent;
         import javafx.scene.input.MouseEvent;
+        import javafx.scene.layout.GridPane;
+
         import java.net.URL;
         import java.text.DecimalFormat;
         import java.util.ResourceBundle;
 
 public class BasicCalculatorViewController implements Initializable {
+
+    @FXML
+    private GridPane gridPane;
 
     @FXML
     private Button button0;
@@ -60,6 +66,9 @@ public class BasicCalculatorViewController implements Initializable {
     private Button buttonEqual;
 
     @FXML
+    private Button buttonEqualInvisable;
+
+    @FXML
     private Button buttonMultiply;
 
     @FXML
@@ -86,6 +95,11 @@ public class BasicCalculatorViewController implements Initializable {
 
     @FXML
     void buttonEqualClicked(MouseEvent event) {
+        CalcVals.PressEnter();
+        Display();
+    }
+    @FXML
+    void buttonEqualEntered(ActionEvent event) {
         CalcVals.PressEnter();
         Display();
     }
@@ -169,5 +183,196 @@ public class BasicCalculatorViewController implements Initializable {
     {
         textFieldMainDisplay.setText(String.valueOf(new DecimalFormat("#,##0.#######").format(CalcVals.DisplayNumber)));
     }
+
+    @FXML
+    void keyTyped(KeyEvent event) {
+        String key = String.valueOf(event.getCode());
+        if (key == "NUMPAD1" || key == "1" || key =="DIGIT1")
+        {
+            CalcVals.PressNumber(1);
+            Display();
+            System.out.println("ljlfdsj;lfj");
+        }
+        else if (key == "NUMPAD2" || key == "2" || key =="DIGIT2")
+        {
+            CalcVals.PressNumber(2);
+            Display();
+        }
+        else if (key == "NUMPAD3" || key == "3" || key =="DIGIT3")
+        {
+            CalcVals.PressNumber(3);
+            Display();
+        }
+        else if (key == "NUMPAD4" || key == "4" || key =="DIGIT4")
+        {
+            CalcVals.PressNumber(4);
+            Display();
+        }
+        else if (key == "NUMPAD5" || key == "5" || key =="DIGIT5")
+        {
+            CalcVals.PressNumber(5);
+            Display();
+        }
+        else if (key == "NUMPAD6" || key == "6" || key =="DIGIT6")
+        {
+            CalcVals.PressNumber(6);
+            Display();
+        }
+        else if (key == "NUMPAD7" || key == "7" || key =="DIGIT7")
+        {
+            CalcVals.PressNumber(7);
+            Display();
+        }
+        else if (key == "NUMPAD8" || key == "8" || key =="DIGIT8")
+        {
+            CalcVals.PressNumber(8);
+            Display();
+        }
+        else if (key == "NUMPAD9" || key == "9" || key =="DIGIT9")
+        {
+            CalcVals.PressNumber(9);
+            Display();
+        }
+        else if (key == "NUMPAD0" || key == "0" || key =="DIGIT0")
+        {
+            CalcVals.PressNumber(0);
+            Display();
+        }
+        else if ((key == "ADD"))
+        {
+            CalcVals.PressOperation('+');
+            Display();
+        }
+        else if (key == "SUBTRACT" || key =="MINUS")
+        {
+            CalcVals.PressOperation('-');
+            Display();
+        }
+        else if (key == "MULTIPLY")
+        {
+            CalcVals.PressOperation('*');
+            Display();
+        }
+        else if (key == "DIVIDE" || key == "SLASH")
+        {
+            CalcVals.PressOperation('/');
+            Display();
+        }
+        else if (key == "ENTER")
+        {
+            CalcVals.PressEnter();
+            Display();
+        }
+
+
+
+        System.out.println(key);
+
+    }
+    @FXML
+    void keyPressed(KeyEvent event) {
+        String key = String.valueOf(event.getCode());
+        if (key == "NUMPAD1" || key == "1" || key =="DIGIT1")
+        {
+            CalcVals.PressNumber(1);
+            Display();
+            System.out.println("ljlfdsj;lfj");
+        }
+        else if (key == "NUMPAD2" || key == "2" || key =="DIGIT2")
+        {
+            CalcVals.PressNumber(2);
+            Display();
+        }
+        else if (key == "NUMPAD3" || key == "3" || key =="DIGIT3")
+        {
+            CalcVals.PressNumber(3);
+            Display();
+        }
+        else if (key == "NUMPAD4" || key == "4" || key =="DIGIT4")
+        {
+            CalcVals.PressNumber(4);
+            Display();
+        }
+        else if (key == "NUMPAD5" || key == "5" || key =="DIGIT5")
+        {
+            CalcVals.PressNumber(5);
+            Display();
+        }
+        else if (key == "NUMPAD6" || key == "6" || key =="DIGIT6")
+        {
+            CalcVals.PressNumber(6);
+            Display();
+        }
+        else if (key == "NUMPAD7" || key == "7" || key =="DIGIT7")
+        {
+            CalcVals.PressNumber(7);
+            Display();
+        }
+        else if (key == "NUMPAD8" || key == "8" || key =="DIGIT8")
+        {
+            CalcVals.PressNumber(8);
+            Display();
+        }
+        else if (key == "NUMPAD9" || key == "9" || key =="DIGIT9")
+        {
+            CalcVals.PressNumber(9);
+            Display();
+        }
+        else if (key == "NUMPAD0" || key == "0" || key =="DIGIT0")
+        {
+            CalcVals.PressNumber(0);
+            Display();
+        }
+        else if (key == "ADD" || (key == "EQUALS" && event.isShiftDown()))
+        {
+            CalcVals.PressOperation('+');
+            Display();
+        }
+        else if (key == "SUBTRACT" || key =="MINUS")
+        {
+            CalcVals.PressOperation('-');
+            Display();
+        }
+        else if (key == "MULTIPLY")
+        {
+            CalcVals.PressOperation('*');
+            Display();
+        }
+        else if (key == "DIVIDE" || key == "SLASH")
+        {
+            CalcVals.PressOperation('/');
+            Display();
+        }
+        else if (key == "ENTER")
+        {
+            CalcVals.PressEnter();
+            Display();
+        }
+        else if (key == "BACK_SPACE" || key == "DELETE")
+        {
+            CalcVals.Clear();
+            Display();
+        }
+        else if (key == "%" || key == "p" || key == "P" || (key == "DIGIT5" && event.isShiftDown()))
+        {
+            CalcVals.Percent();
+            Display();
+        }
+        else if (key == "R" || key == "r")
+        {
+            CalcVals.Sqrt();
+            Display();
+        }
+
+
+
+        System.out.println(key);
+
+    }
+    @FXML
+    void textFieldAction(ActionEvent event) {
+        gridPane.requestFocus();
+    }
+
 
 }

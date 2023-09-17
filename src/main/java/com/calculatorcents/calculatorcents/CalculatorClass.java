@@ -190,14 +190,19 @@ public class CalculatorClass {
 
     public void Sqrt()
     {
+
         Number = Math.sqrt(Number);
         DisplayNumber = Number;
+        NewNumber = true;
     }
 
     public void Percent()
     {
         Number = Number *.01;
         DisplayNumber = Number;
+        NewNumber = true;
+
+
     }
 
 
