@@ -127,9 +127,7 @@ public class CalculatorClass {
                 DisplayNumber = NumberSimpleOpp / Number;
             NumberSimpleOpp = DisplayNumber;
             Number = 0;
-            //CalculateNextOppRepeat = true;
             CanDecimal = false;
-            System.out.println("this one!");
         }
 
         Operator = opp;
