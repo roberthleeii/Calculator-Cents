@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -21,6 +22,12 @@
                   <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#exitApplication" text="Exit" />
                </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Calculator">
+               <items>
+                  <RadioMenuItem mnemonicParsing="false" text="Basic" />
+                  <RadioMenuItem mnemonicParsing="false" text="Financial" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
       <GridPane fx:id="gridPane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" onKeyPressed="#keyPressed" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
